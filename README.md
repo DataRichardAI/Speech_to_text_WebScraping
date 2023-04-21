@@ -92,6 +92,7 @@ Before running the script, the following need to be installed additionally.
 - pdfminer.six (conda install pdfminer.six)
 - pydub
 - num2words
+- pydub
 
 ### Usage
 ```python
@@ -124,7 +125,6 @@ This script creates a Speech Data Explorer dashboard to visualize interesting st
 
 ## Requirements
 
-- Python 3.x
 - NeMo library
 - Matplotlib
 - Seaborn
@@ -135,7 +135,7 @@ This script creates a Speech Data Explorer dashboard to visualize interesting st
 Run the script with the following command:
 
 ```
-python speech_data_explorer.py --manifest_file <path_to_jsonl_file>
+python data_explorer.py --manifest_file <path_to_jsonl_file>
 ```
 
 Replace `<path_to_jsonl_file>` with the directory path of the JSONL manifest file.
@@ -156,7 +156,6 @@ This will create an SDE dashboard for the dataset specified in `manifest.jsonl` 
 6. The numbers which are concatinated to a text is not being converted into it's word form, I have avoided doing so as it would lead to a word which has no meaning.
 7. The preprocessing of the text has been done after the creation of the jsonl format chuncks as the timestamps (Refer Slide: 04:45) was required to obtain the audio and text chunks to create the jsonl format.
 8. A stable internet is recommended to efficiently and smoothly runs the python scripts, If unusual delays occur in loading the webpage the next task in the program will get exceuted without the required prerequisites. This will lead to error in executions of the program.
-9. 
 
 
 
