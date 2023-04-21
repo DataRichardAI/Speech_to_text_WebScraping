@@ -164,5 +164,6 @@ This will create an SDE dashboard for the dataset specified in `manifest.jsonl` 
 - The numbers which are concatinated to a text is not being converted into it's word form, I have avoided doing so as it would lead to a word which has no meaning.
 - The preprocessing of the text has been done after the creation of the jsonl format chuncks as the timestamps (Refer Slide: 04:45) was required to obtain the audio and text chunks to create the jsonl format.
 - A stable internet is recommended to efficiently and smoothly runs the python scripts, If unusual delays occur in loading the webpage the next task in the program will get exceuted without the required prerequisites. This will lead to error in executions of the program.
+- Make sure you have created a different environment to install all the required modules and libraries to avoid alteration of previously installed modules and libraries.
  
 
