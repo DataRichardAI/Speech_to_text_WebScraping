@@ -41,7 +41,9 @@ To use the script, open a command prompt and navigate to the directory where the
 ```python 
 python download_transcript.py --course_url <url> --driver_directory <path> --output_path <path>
 ```
-Replace '<url>' with the URL of the course website, '<path>' with the path to the directory containing the Chrome web driver, and '<path>' with the path to the directory where you want to save the pdf files.
+Replace '<url>' with the URL of the course website, 
+'<path>' with the path to the directory containing the Chrome web driver, 
+and '<path>' with the path to the directory where you want to save the pdf files.
 
 ### License
 This script is released under the MIT License.
