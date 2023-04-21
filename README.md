@@ -119,21 +119,28 @@ The script does the following:
 
 # Task 5
   
-# Speech Data Explorer Dashboard
+# Creates a Speech Data Explorer Dashboard
 
-This script creates a Speech Data Explorer dashboard to visualize interesting statistics of a dataset in JSONL format.
+I am using NeMo to create the Speech Data Explorer dashboard to visualize interesting statistics of a dataset.
 
 ## Requirements
 
 - NeMo library
-- Matplotlib
-- Seaborn
 - Jsonlines
+  
+
 
 ## Usage
+  
+First clone the NeMO repository with the following command
+```
+git clone  https://github.com/NVIDIA/NeMo.git
+```
+  
+Navigate to the data_explorer.py : NeMo/tools/speech_data_explorer/data_explorer.py
 
 Run the script with the following command:
-
+  
 ```
 python data_explorer.py --manifest_file <path_to_jsonl_file>
 ```
