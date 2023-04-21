@@ -1,4 +1,6 @@
-# Speech_to_text_WebScraping
+# TASK 1
+
+## Speech_to_text_WebScraping
 Create a data engineering pipeline to curate a Speech-To-Text dataset from publicly available lectures on NPTEL, to train speech recognition models.
 
 ---
@@ -14,7 +16,7 @@ Before running the script, you must have the following installed on your system:
 - tqdm
 - argparse
 
-You will also need the Chrome web driver installed on your system. You can download it from the official website or use the webdriver-manager to download it automatically.
+You will also need the Chrome web driver installed on your system. You can download it from the official website or use the webdriver-manager to download it automatically. The path directory to this driver installation will be needed to be specified as a command line argument.
 
 ### Usage
 To use the script, open a command prompt and navigate to the directory where the script is saved. Then run the following command:
@@ -48,22 +50,37 @@ and '<path>' with the path to the directory where you want to save the pdf files
 ### License
 This script is released under the MIT License.
 
+# TASK 2
+  
 ## Preprocessing Audio: Bash Script Description
-This script takes audio files in mp3 format from an input directory and converts them to WAV format with a 16KHz sampling rate and mono channel. It uses ffmpeg for audio conversion and limits the number of parallel processes to a specified number.
 
-### Dependencies
-- ffmpeg
+Here I developed a bash script that can be used to preprocess audio files. The script takes in three inputs:
 
-### Usage
-```bash
-./mp3_to_wav.sh input_directory output_directory num_parallel_processes
+1. The input directory where the audio files are stored
+2. The output directory where the processed audio files will be saved
+3. The number of parallel processes to use for the conversion
+
+The script uses [ffmpeg](https://www.ffmpeg.org/) to convert audio files to WAV format with a 16KHz sampling rate and mono channel. It converts all MP3 files in the input directory to WAV format and saves them in the output directory. The script limits the number of parallel processes to the value provided as input.
+
+## Requirements
+
+- [ffmpeg](https://www.ffmpeg.org/) must be installed to run the script.
+
+## Usage
+
+To use the script, run the following command in a terminal:
+
 ```
-This command will convert all mp3 files in the input_files directory to WAV format and save them in the output_files directory with a maximum of 4 parallel processes running at a time.
+$ bash preprocessaudio.sh /path/to/input/directory /path/to/output/directory num_parallel_processes
+```
 
-- input_directory: path to the directory containing input mp3 files
-- output_directory: path to the directory where output WAV files will be saved
-- num_parallel_processes: maximum number of parallel processes to run at a time (integer value)
+For example, to preprocess audio files stored in `/home/richard/Downloads/Final_run/Audios/` and save the processed files in `/home/richard/Downloads/Final_run/audio_wav/` using 4 parallel processes, run:
 
+```
+$ bash preprocessaudio.sh /home/richard/Downloads/Final_run/Audios/ /home/richard/Downloads/Final_run/audio_wav/ 4
+```
+# TASK 3 & TASK 4
+  
 ## Creating the training manifest file
 
 This step is used to split audio files and generate a training manifest for speech recognition models.
@@ -96,7 +113,7 @@ The script does the following:
 4. Generates a training manifest file containing the audio file path, duration, and preprocessed text using **json.dump**
 
 
-# Limitations/Beware:
+### Limitations:
 
 1. The script to download mp3 file by web scraping will work only for websites with similar webpage layout.
 2. On extracting the text from the pdf files, some corrupted pdf pages will trigger an error and this pdf will and the corresponding mp3 file will be skipped, displaying an error message. eg: 95.pdf
