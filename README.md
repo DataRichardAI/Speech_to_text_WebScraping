@@ -79,6 +79,7 @@ For example, to preprocess audio files stored in `/home/richard/Downloads/Final_
 ```
 $ bash preprocessaudio.sh /home/richard/Downloads/Final_run/Audios/ /home/richard/Downloads/Final_run/audio_wav/ 4
 ```
+  
 # TASK 3 & TASK 4
   
 ## Creating the training manifest file
@@ -99,8 +100,11 @@ python preprocess_pdf_argparse.py --audio_file_path <path-to-audio-files> --pdf_
 The script takes the following arguments:
 
 audio_file_path: Path to the directory containing audio files
+  
 pdf_file_path: Path to the directory containing PDF files
+  
 output_file_path: Path to the directory where audio chunks will be saved
+  
 manifest_path: Path to the output training manifest file
 
 ### Functionality
