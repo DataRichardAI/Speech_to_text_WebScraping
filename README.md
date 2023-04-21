@@ -96,6 +96,16 @@ The script does the following:
 4. Generates a training manifest file containing the audio file path, duration, and preprocessed text using **json.dump**
 
 
+# Note:
+
+1. The script to download mp3 file by web scraping will work only for websites with similar webpage layout.
+2. On extracting the text from the pdf files, some corrupted pdf pages will trigger an error and this pdf will and the corresponding mp3 file will be skipped, displaying an error message. eg: 95.pdf
+3. Make sure to install the pdfminer.six instead of the pdfminer.
+4. A seperate python environment was created for the preprocessing python scripts whereas the web scraping part i.e. Task 1 was run on the base environment.
+5. Some unwanted unicode characters are getting generated which were not originally present in the pdf file. Other text extraction modules can be tried to see if this can be avoided.
+6. The numbers which are concatinated to a text is not being converted into it's word form, I have avoided doing so as it would lead to a word which has no meaning.
+7. The preprocessing of the text has been done after the creation of the jsonl format chuncks as the timestamps (Refer Slide: 04:45) was required to obtain the audio and text chunks to create the jsonl format.
+8. 
 
 
 
