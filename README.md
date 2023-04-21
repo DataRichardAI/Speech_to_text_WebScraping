@@ -116,7 +116,36 @@ The script does the following:
 3. Preprocesses the text by converting all text to lowercase, removing all punctuations, and converting all digits to their spoken form using **string.punctuation** and **num2words**
 4. Generates a training manifest file containing the audio file path, duration, and preprocessed text using **json.dump**
 
+# Task 5
+  
+# Speech Data Explorer Dashboard
 
+This script creates a Speech Data Explorer dashboard to visualize interesting statistics of a dataset in JSONL format.
+
+## Requirements
+
+- Python 3.x
+- NeMo library
+- Matplotlib
+- Seaborn
+- Jsonlines
+
+## Usage
+
+Run the script with the following command:
+
+```
+python speech_data_explorer.py --manifest_file <path_to_jsonl_file>
+```
+
+Replace `<path_to_jsonl_file>` with the directory path of the JSONL manifest file.
+
+The script calculates statistics such as total hours, total utterances, vocabulary and alphabet used in the dataset. It also creates four plots for duration, words, characters, and alphabet distribution.
+
+The SDE dashboard is created and figures are added to it. Finally, the dashboard is displayed.
+
+This will create an SDE dashboard for the dataset specified in `manifest.jsonl` file located in the `data` directory.
+  
 ### Limitations:
 
 1. The script to download mp3 file by web scraping will work only for websites with similar webpage layout.
