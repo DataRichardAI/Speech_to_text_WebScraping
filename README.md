@@ -153,18 +153,16 @@ The SDE dashboard is created and figures are added to it. Finally, the dashboard
 
 This will create an SDE dashboard for the dataset specified in `manifest.jsonl` file located in the `data` directory.
   
-### Limitations:
+### Observations:
 
-1. The script to download mp3 file by web scraping will work only for websites with similar webpage layout.
-2. On extracting the text from the pdf files, some corrupted pdf pages will trigger an error and this pdf will and the corresponding mp3 file will be skipped, displaying an error message. eg: 95.pdf
-3. Make sure to install the pdfminer.six instead of the pdfminer.
-4. A seperate python environment was created for the preprocessing python scripts whereas the web scraping part i.e. Task 1 was run on the base environment.
-5. Some unwanted unicode characters are getting generated which were not originally present in the pdf file. Other text extraction modules can be tried to see if this can be avoided.
-6. The numbers which are concatinated to a text is not being converted into it's word form, I have avoided doing so as it would lead to a word which has no meaning.
-7. The preprocessing of the text has been done after the creation of the jsonl format chuncks as the timestamps (Refer Slide: 04:45) was required to obtain the audio and text chunks to create the jsonl format.
-8. A stable internet is recommended to efficiently and smoothly runs the python scripts, If unusual delays occur in loading the webpage the next task in the program will get exceuted without the required prerequisites. This will lead to error in executions of the program.
-
-
-
-
+- The script to download mp3 file by web scraping will work only for websites with similar webpage layout.
+- On extracting the text from the pdf files, some corrupted pdf pages will trigger an error and this pdf will and the corresponding mp3 file will be skipped, displaying an error message. eg: 95.pdf
+- I also encountered some pdf files where the timestamps were not extracted properly so the audio and text chuncks were not generated efficiently.
+- Make sure to install the pdfminer.six instead of the pdfminer.
+- A seperate python environment was created for the preprocessing python scripts whereas the web scraping part i.e. Task 1 was run on the base environment.
+- Some unwanted unicode characters are getting generated which were not originally present in the pdf file. Other text extraction modules can be tried to see if this can be avoided.
+- The numbers which are concatinated to a text is not being converted into it's word form, I have avoided doing so as it would lead to a word which has no meaning.
+- The preprocessing of the text has been done after the creation of the jsonl format chuncks as the timestamps (Refer Slide: 04:45) was required to obtain the audio and text chunks to create the jsonl format.
+- A stable internet is recommended to efficiently and smoothly runs the python scripts, If unusual delays occur in loading the webpage the next task in the program will get exceuted without the required prerequisites. This will lead to error in executions of the program.
+ 
 
